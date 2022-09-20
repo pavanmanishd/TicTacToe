@@ -67,7 +67,7 @@ void computerMove()
 	do{
 		x = rand() % 3;
 		y = rand() % 3;		
-	}while(board[x][y]!=NULL);
+	}while(board[x][y]!=' ');
 	board[x][y] = computer;
 }
 char checkWinner()
@@ -113,14 +113,14 @@ int main()
     	
     	playerMove();
     	winner = checkWinner();
-		if(winner != ' ' || checkFreeSpaces == 0)
+		if(winner != ' ' || checkFreeSpaces() == 0)
 		{
 			break;
 		}
 		
 		computerMove();
 		winner = checkWinner();
-		if(winner != ' ' || checkFreeSpaces == 0)
+		if(winner != ' ' || checkFreeSpaces() == 0)
 		{
 			break;
 		}
